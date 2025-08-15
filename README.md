@@ -2,18 +2,18 @@
 
 Repositório: [https://github.com/vitor-souza-ime/gray](https://github.com/vitor-souza-ime/gray)
 
-Este projeto implementa um **conversor de código Gray de 4 bits para display de 7 segmentos** utilizando VHDL. O código principal está no arquivo `main.py`, que simula ou interage com o hardware correspondente.
+Este projeto implementa um **conversor de código Gray de 4 bits para display de 7 segmentos** utilizando **VHDL**. O arquivo principal do projeto é `main.vhd`, que descreve a lógica digital para conversão e acionamento do display.
 
 ---
 
 ## Funcionalidades
 
-O sistema realiza a conversão de **entradas Gray de 4 bits** (0 a 15) para **saídas de 8 bits** que controlam diretamente os segmentos de um display de 7 segmentos.  
+O sistema realiza a conversão de **entradas Gray de 4 bits** (0 a 15) para **saídas de 8 bits** que controlam diretamente os LEDs de um display de 7 segmentos:
 
 - **Entrada (`inps`)**: código Gray de 4 bits.  
-- **Saída (`display`)**: padrão de 8 bits para controle dos LEDs do display.  
+- **Saída (`display`)**: padrão de 8 bits para controle dos segmentos do display.  
 - **Sinal de clock (`clk`)**: sincroniza a operação do sistema.  
-- Caso a entrada não corresponda a um código Gray válido, o display é desligado (`00000000`).
+- Caso a entrada não corresponda a um código Gray válido, o display é desligado (`00000000`).  
 
 A correspondência entre entradas Gray e padrões do display segue a tabela definida no código VHDL.
 
@@ -21,9 +21,8 @@ A correspondência entre entradas Gray e padrões do display segue a tabela defi
 
 ## Requisitos
 
-- Python 3.8 ou superior (para execução de `main.py`).  
-- Ferramenta de síntese VHDL (opcional, se for implementar em CPLD/FPGA).  
-- Bibliotecas padrão do Python (nenhuma dependência externa).
+- Ferramenta de síntese VHDL ou ambiente de desenvolvimento para CPLD/FPGA (ex: Quartus, Vivado, ModelSim).  
+- Conhecimento básico de lógica digital e VHDL para simulação e teste do projeto.
 
 ---
 
@@ -35,13 +34,9 @@ A correspondência entre entradas Gray e padrões do display segue a tabela defi
    cd gray
 ````
 
-2. Execute o arquivo principal:
+2. Abra o arquivo `main.vhd` em seu ambiente de desenvolvimento VHDL preferido.
 
-   ```bash
-   python main.py
-   ```
-
-3. O sistema processará as entradas Gray definidas no código e exibirá os padrões correspondentes do display de 7 segmentos.
+3. Compile e simule o projeto, verificando os padrões do display para todas as entradas Gray de 4 bits.
 
 ---
 
@@ -50,8 +45,8 @@ A correspondência entre entradas Gray e padrões do display segue a tabela defi
 ```
 gray/
 │
-├─ main.py       # Código principal da simulação
-├─ 
-└─ README.md     # Documentação do projeto
+├─ main.vhd       # Código principal em VHDL do conversor Gray
+└─ README.md      # Documentação do projeto
 ```
+
 
